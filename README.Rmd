@@ -1,20 +1,29 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
 # mitoPlotR
 
 <!-- badges: start -->
-
 <!-- badges: end -->
 
-mitoPlotR is an R package for visualization and exploratory analysis of
-mitochondrial genomes, with a focus on metazoan mitogenomes and MITOS2
-annotation workflows
+mitoPlotR is an R package for visualization and exploratory analysis of mitochondrial genomes, with a focus on metazoan
+mitogenomes and MITOS2 annotation workflows
 
 ## Installation
 
-You can install the development version of mitoPlotR from
-[GitHub](https://github.com/) with:
+You can install the development version of mitoPlotR from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("pak")
@@ -25,7 +34,7 @@ pak::pak("KirtOnthank/mitoPlotR")
 
 This is a basic example which shows you how to solve a common problem:
 
-``` r
+```{r example, eval=F}
 library(mitoPlotR)
 
 plot_mitogenome(
@@ -36,6 +45,7 @@ plot_mitogenome(
   species_name = "Octopus rubescens"
 )
 ```
+
 
 ## Example output
 
