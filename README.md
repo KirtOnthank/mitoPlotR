@@ -13,17 +13,14 @@ annotation workflows
 
 ## Installation
 
-You can install the development version of mitoPlotR from
-[GitHub](https://github.com/) with:
+You can install mitoPlotR from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("pak")
-pak::pak("KirtOnthank/mitoPlotR")
+# install.packages("remotes")
+remotes::install_github("KirtOnthank/mitoPlotR")
 ```
 
 ## Example
-
-This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(mitoPlotR)

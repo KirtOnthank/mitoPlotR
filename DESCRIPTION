@@ -1,9 +1,16 @@
 Package: mitoPlotR
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Visualization Tools for Mitochondrial Genomes
+Version: 26.5.1
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person(
+        "Kirt", "Onthank",
+        email = "kirt.onthank@wallawalla.edu",
+        role = c("aut", "cre")
+    )
+Description: Provides tools for visualization, annotation handling,
+    and exploratory analysis of mitochondrial genomes in R, including
+    publication-quality circular plots for metazoan mitogenomes and
+    MITOS2 annotation workflows.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
