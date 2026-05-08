@@ -27,10 +27,10 @@ plot_mitogenome(
 file containing three columns:
 sequence name, position, and depth.}
 
-\item{output_file}{Output image filename.
-Defaults to \code{"circular.png"}.}
-
-\item{species_name}{Species name to display in the center of the plot.
+\item{output_file}{Output image filename. Supported formats
+currently include \code{.png} and \code{.svg}. The graphics format is
+determined automatically from the file extension.
+@param species_name Species name to display in the center of the plot.
 If \code{NULL}, the FASTA filename will be used.}
 
 \item{width}{Width of the output image in pixels.}

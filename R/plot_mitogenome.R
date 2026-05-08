@@ -20,7 +20,7 @@ utils::globalVariables(c(
 #'   sequence name, position, and depth.
 #' @param output_file Output image filename. Supported formats
 #'   currently include `.png` and `.svg`. The graphics format is
-#'   determined automatically from the file extension.#'
+#'   determined automatically from the file extension.
 #'   @param species_name Species name to display in the center of the plot.
 #'   If `NULL`, the FASTA filename will be used.
 #' @param width Width of the output image in pixels.
