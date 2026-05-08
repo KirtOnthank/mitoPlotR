@@ -1,6 +1,6 @@
 Package: mitoPlotR
 Title: Visualization Tools for Mitochondrial Genomes
-Version: 26.5.1
+Version: 26.5.2
 Authors@R: 
     person(
         "Kirt", "Onthank",

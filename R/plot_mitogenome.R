@@ -18,9 +18,10 @@ utils::globalVariables(c(
 #' @param depth_file Optional path to a tab-delimited sequencing depth
 #'   file containing three columns:
 #'   sequence name, position, and depth.
-#' @param output_file Output image filename.
-#'   Defaults to `"circular.png"`.
-#' @param species_name Species name to display in the center of the plot.
+#' @param output_file Output image filename. Supported formats
+#'   currently include `.png` and `.svg`. The graphics format is
+#'   determined automatically from the file extension.#'
+#'   @param species_name Species name to display in the center of the plot.
 #'   If `NULL`, the FASTA filename will be used.
 #' @param width Width of the output image in pixels.
 #' @param height Height of the output image in pixels.
@@ -102,6 +103,8 @@ plot_mitogenome <- function(
     stop("Package 'dplyr' is required.")
   }
 
+  file_type <- match.arg(file_type, c("png", "svg"))
+
   gff <- rtracklayer::import(gff_file)
 
   seqs <- Biostrings::readDNAStringSet(fasta_file)
@@ -144,7 +147,33 @@ plot_mitogenome <- function(
     depth_binned$depth_scaled <- pmin(depth_binned$depth, depth_max) / depth_max
   }
 
-  grDevices::png(output_file, width = width, height = height, res = res)
+  file_type <- tolower(tools::file_ext(output_file))
+
+  if (!file_type %in% c("png", "svg")) {
+    stop(
+      "Unsupported output format. ",
+      "Please use a filename ending in '.png' or '.svg'."
+    )
+  }
+
+  if (file_type == "png") {
+
+    grDevices::png(
+      filename = output_file,
+      width = width,
+      height = height,
+      res = res
+    )
+
+  } else if (file_type == "svg") {
+
+    grDevices::svg(
+      filename = output_file,
+      width = width / res,
+      height = height / res
+    )
+
+  }
 
   circlize::circos.clear()
   circlize::circos.par(
