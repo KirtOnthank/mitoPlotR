@@ -103,8 +103,6 @@ plot_mitogenome <- function(
     stop("Package 'dplyr' is required.")
   }
 
-  file_type <- match.arg(file_type, c("png", "svg"))
-
   gff <- rtracklayer::import(gff_file)
 
   seqs <- Biostrings::readDNAStringSet(fasta_file)
